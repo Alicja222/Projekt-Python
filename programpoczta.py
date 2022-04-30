@@ -1,6 +1,7 @@
 import pandas as pd
-pr = pd.read_excel(r'D:\pythonProjectWSB\Pracownicy.xlsx')
 import win32com.client as win32
+
+pr = pd.read_excel(r'D:\pythonProjectWSB\Pracownicy.xlsx')
 informacja = []
 plik = input('Podaj ścieżkę do pliku')
 dane = pr['ID']
