@@ -5,7 +5,7 @@ import pandas as pd
 def sprawdz_email(plik):
     print('Start funkcji sprawdz_email')
     pr = pd.read_excel(plik)
-    lista_domeny = pd.read_excel(r'D:\pythonProjectWSB\Lista domen.xlsx')
+    lista_domeny = pd.read_excel(r'Lista domen.xlsx')
     mail = pr["Email"]
     nazwa_domeny = lista_domeny["Lista domen"]
     i = 0
