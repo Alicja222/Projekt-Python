@@ -8,7 +8,7 @@ def suma_pensja(plik):
     pensja = pr['Pensja'].sum()
     print('Pensja pracowników wynosi', pensja)
     print('Koniec funkcji suma_pensja')
-
+    return pensja
 
 # Suma premii wszystkich pracowników
 
@@ -18,6 +18,7 @@ def suma_premia(plik):
     premia = pr['Premia'].sum()
     print('Premia pracowników wynosi', premia)
     print('Koniec funkcji suma_premia')
+    return premia
 
 
 # Suma wypłat wraz z premią wszystkich pracowników

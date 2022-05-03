@@ -1,6 +1,6 @@
 import pandas as pd
 
-pr = pd.read_excel(r'D:\pythonProjectWSB\Pracownicy.xlsx')
+pr = pd.read_excel('Pracownicy.xlsx')
 
 # Suma wypłat wszystkich pracowników
 pensja = pr['Pensja'].sum()

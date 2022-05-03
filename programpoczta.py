@@ -1,9 +1,9 @@
 import pandas as pd
 import win32com.client as win32
 
-pr = pd.read_excel(r'D:\pythonProjectWSB\Pracownicy.xlsx')
+pr = pd.read_excel('Pracownicy.xlsx')
 informacja = []
-plik = input('Podaj ścieżkę do pliku')
+#plik = input('Podaj ścieżkę do pliku')
 dane = pr['ID']
 i = 0
 for info in dane:
@@ -15,9 +15,9 @@ for info in dane:
 outlook = win32.Dispatch('outlook.application')
 mail = outlook.CreateItem(0)
 
-mail.To = 'tester.wsb@wp.pl'
+mail.To = 'pw27883@student.wsb.wroclaw.pl'
 mail.Subject = 'Dzień dobry'
 mail.Body = tekst
-mail.CC = 'tester.wsb@wp.pl'
+mail.CC = 'pw27883@student.wsb.wroclaw.pl'
 
 mail.Send()
