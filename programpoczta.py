@@ -12,10 +12,18 @@ for info in dane:
     print(tekst)
     i += 1
 
+listamail = []
+poczta = pr['Email']
+i = 0
+for skrzynka in poczta:
+    konto = poczta
+    listamail.append(konto)
+    i += 1
+
 outlook = win32.Dispatch('outlook.application')
 mail = outlook.CreateItem(0)
 
-mail.To = 'pw27883@student.wsb.wroclaw.pl'
+mail.To = ";".join(konto)
 mail.Subject = 'Dzień dobry'
 mail.Body = tekst
 mail.CC = 'pw27883@student.wsb.wroclaw.pl'
