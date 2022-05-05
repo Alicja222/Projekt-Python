@@ -1,15 +1,22 @@
 import pandas as pd
 import win32com.client as win32
+import time
 
 pr = pd.read_excel('Pracownicy.xlsx')
-dane = pr['ID']
-poczta = pr['Email']
-outlook = win32.Dispatch('outlook.application')
-mail = outlook.CreateItem(0)
-for index, row in pr:
-    mail.To = row["Email"]
-    mail.Subject = 'Dzień dobry'
-    mail.Body = (f"Witaj {pr.loc[i, 'Imię']} {pr.loc[i, 'Nazwisko']} twój numer pesel to {pr.loc[i, 'PESEL']}. Twoje wynagrodzenie w miesiącu {pr.loc[i, 'Miesiąc_pensja']} wynosi {pr.loc[i, 'Pensja']} zł, otrzymana premia to {pr.loc[i, 'Premia']} zł, ilość dni przepracowanych to {pr.loc[i, 'Dni_pracy']} dni, pozostało {pr.loc[i, 'Dni_urlopu']} dni urlopu. Pozdrawiamy.")
-    mail.CC = 'pw27883@student.wsb.wroclaw.pl'
+nr_ids = pr['ID']
+emaile = pr['Email']
+imiona = pr['Imię']
+nazwiska = pr['Nazwisko']
+pesele = pr['PESEL']
 
+outlook = win32.Dispatch('outlook.application')
+
+
+for nr_id, email, imie, nazwisko, pesel in zip(nr_ids, emaile, imiona, nazwiska, pesele):
+    mail = outlook.CreateItem(0)
+    mail.To = mail
+    mail.Subject = 'Dzień dobry'
+    mail.Body = f"Witaj {imie} {nazwisko}, twój numer pesel to {pesel}"
+    mail.CC = ''
     mail.Send()
+    print('Mail ',nr_id ,'wyslany')
