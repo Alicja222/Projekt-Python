@@ -20,7 +20,7 @@ for nr_id, email in zip(daneid, emaile):
     mail = outlook.CreateItem(0)
     mail.To = email
     mail.Subject = 'Dzień dobry'
-    mail.Body = tekst
+    mail.Body = informacja[nr_id -1]
     mail.CC = 'pw27883@student.wsb.wroclaw.pl'
     mail.Send()
-    print('Mail ',daneid, 'wysłany')
+    print('Mail ',nr_id, 'wysłany')
