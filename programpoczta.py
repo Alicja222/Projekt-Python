@@ -1,5 +1,6 @@
 import pandas as pd
 import win32com.client as win32
+import  time
 
 # Wysłanie emaili do pracowników z informacją
 
@@ -23,7 +24,10 @@ def wysłanie_emaili():
         mail.Body = informacja[nr_id -1]
         mail.CC = 'pw27883@student.wsb.wroclaw.pl'
         mail.Send()
+        time.sleep(5)
         print('Mail ',nr_id, 'wysłany')
     print('Koniec funkcji wysłanie_emaili')
 
     return True
+
+wysłanie_emaili()
