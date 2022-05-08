@@ -4,9 +4,9 @@ import  time
 
 # Wysłanie emaili do pracowników z informacją
 
-def wysłanie_emaili():
+def wysłanie_emaili(plik):
     print('Start funkcji wysłanie_emaili')
-    pr = pd.read_excel('Pracownicy.xlsx')
+    pr = pd.read_excel(plik)
     informacja = []
     daneid = pr['ID']
     emaile = pr['Email']
@@ -30,4 +30,3 @@ def wysłanie_emaili():
 
     return True
 
-wysłanie_emaili()

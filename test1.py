@@ -1,5 +1,6 @@
 from funkcja1 import *
 from funkcjapensjasuma import *
+from programpoczta import wysłanie_emaili
 
 def test_1():
     assert add(5,3) == 8
@@ -12,4 +13,7 @@ def test_3():
 
 def test_4():
     assert suma_premia('Pracownicy.xlsx') == 13400
+
+def test_5():
+    assert wysłanie_emaili('Pracownicy.xlsx') == True
 
