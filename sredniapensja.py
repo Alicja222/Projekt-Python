@@ -7,7 +7,7 @@ pensja = pr['Pensja'].sum()
 print('Pensja pracowników wynosi',pensja)
 
 # Średnia wypłat wszystkich pracowników
-ilość = int(len(pr['Pensja']))
-srednia = pensja / ilość
+ilosc = int(len(pr['Pensja']))
+srednia = pensja / ilosc
 
 print('Średnia pensji wynosi ', str(round(srednia,2)))

@@ -29,4 +29,4 @@ def suma_wyplata(plik):
     wyplata = pr['Pensja'].sum() + pr['Premia'].sum()
     print('Suma pensji i premii wynosi ',wyplata)
     print('Koniec funkcji suma_wyplata')
-
+    return wyplata
